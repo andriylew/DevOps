@@ -12,7 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   azureSubscription: 'test-ci'
-
+  webAppName: 'test-stage-ci'
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
