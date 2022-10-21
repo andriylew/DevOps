@@ -66,6 +66,7 @@ stages:
   dependsOn: Build
   jobs:
   - deployment: Deploy
+    environment:  test-ci-env
     variables:
     - group: Release
     strategy:
