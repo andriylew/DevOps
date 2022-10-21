@@ -16,14 +16,14 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'runtime'
-    version: '2.2'
+    version: '2.2.x'
     includePreviewVersions: true
 
 - task: UseDotNet@2
-  displayName: 'Use .NET SDK 6.x'
+  displayName: 'Use .NET SDK 2.2.x'
   inputs:
     packageType: sdk
-    version: '2.2'
+    version: '2.2.x'
     includePreviewVersions: true
 
 - task: DotNetCoreCLI@2
