@@ -13,12 +13,18 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'runtime'
+    version: '2.2'
+    includePreviewVersions: true
 
 - task: UseDotNet@2
   displayName: 'Use .NET SDK 6.x'
   inputs:
     packageType: sdk
-    version: '6.x'
+    version: '2.2'
+    includePreviewVersions: true
 
 - task: DotNetCoreCLI@2
   inputs:
