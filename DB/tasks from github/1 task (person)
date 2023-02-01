@@ -1,0 +1,53 @@
+Create Table person (
+  name VARCHAR(20),
+  age INT,
+  height INT,
+  city VARCHAR(20),
+  favorite_color VARCHAR(20),
+  id SERIAL PRIMARY KEY
+);
+
+INSERT INTO person VALUES('Roma',20,175,'Lviv','red');
+INSERT INTO person VALUES('Andrii',22,170,'Lviv','pink');
+INSERT INTO person VALUES('Julia',20,167,'Lviv','green');
+INSERT INTO person VALUES('Jack',24,177,'Lviv','yellow');
+INSERT INTO person VALUES('Fred',18,185,'Kyiv','blue');
+SELECT * FROM person;
+
+SELECT * FROM person 
+ORDER BY height DESC;
+
+SELECT * FROM person 
+ORDER BY height ASC;
+
+SELECT * FROM person 
+ORDER BY age DESC;
+
+SELECT * FROM person 
+WHERE age>20;
+
+SELECT * FROM person 
+WHERE age=18;
+
+SELECT * FROM person 
+WHERE age<20 or age>30;
+
+SELECT * FROM person 
+WHERE age<>27;
+
+SELECT * FROM person 
+WHERE favorite_color<>'red';
+
+SELECT * FROM person 
+WHERE favorite_color<>'red'and favorite_color<>'blue';
+
+SELECT * FROM person 
+WHERE favorite_color='orange' or favorite_color='green';
+
+SELECT * FROM person 
+WHERE favorite_color IN ('orange','green','blue');
+
+SELECT * FROM person 
+WHERE favorite_color IN ('yellow','purple');
+
+DROP TABLE person;
