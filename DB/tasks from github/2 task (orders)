@@ -1,0 +1,41 @@
+Create Table person (
+  name VARCHAR(20),
+  age INT,
+  height INT,
+  city VARCHAR(20),
+  favorite_color VARCHAR(20),
+  person_id SERIAL PRIMARY KEY
+);
+
+INSERT INTO person VALUES('Roma',20,175,'Lviv','red');
+INSERT INTO person VALUES('Andrii',22,170,'Lviv','pink');
+INSERT INTO person VALUES('Julia',20,167,'Lviv','green');
+INSERT INTO person VALUES('Jack',24,177,'Lviv','yellow');
+INSERT INTO person VALUES('Fred',18,185,'Kyiv','blue');
+SELECT * FROM person;
+
+
+
+CREATE TABLE orders (
+  order_id SERIAL,
+  person_id INT ,
+  product_name VARCHAR(20),
+  product_price INT,
+  quantity INT,
+  FOREIGN KEY(person_id) REFERENCES person(person_id) ON DELETE SET null
+);
+
+INSERT INTO orders (person_id,product_name,product_price, quantity) VALUES(1,'cake',20,2);
+INSERT INTO orders (person_id,product_name,product_price, quantity) VALUES(2,'pizza',5,3);
+INSERT INTO orders (person_id,product_name,product_price, quantity) VALUES(1,'ice-cream',7,3);
+INSERT INTO orders (person_id,product_name,product_price, quantity) VALUES(4,'oranje juice',2,1);
+INSERT INTO orders (person_id,product_name,product_price, quantity) VALUES(3,'jerky',2,10);
+
+SELECT * from orders;
+
+SELECT SUM(quantity) from orders;
+SELECT SUM(product_price) from orders;
+SELECT person_id, SUM(product_price) from orders  GROUP BY person_id Order by person_id;
+
+DROP TABLE orders;
+DROP TABLE person;
