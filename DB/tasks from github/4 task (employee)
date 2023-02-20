@@ -1,5 +1,7 @@
 Select first_name, last_name from employee where city='Calgary';
 Select birth_date from employee order by birth_date desc limit(1);
 Select birth_date from employee order by birth_date asc limit(1);
+Select min(birth_date) from employee;
+Select max(birth_date) from employee;
 select * from employee where reports_to=(Select employee_id from employee where first_name='Nancy' and last_name='Edwards');
-Select count(employee_id) from employee where city='Lethbridge';
+Select count(employee_id) from employee where city='Lethbridge' ;
