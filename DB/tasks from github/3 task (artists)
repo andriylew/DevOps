@@ -1,0 +1,8 @@
+INSERT into artist(name) values('joji');
+INSERT into artist(name) values('21 pilots');
+INSERT into artist(name) values('zhadan i sobaky');
+Select name as artist from artist order by name desc limit(10);
+Select name as artist from artist order by name asc limit(5);
+Select name as artist from artist where name like ('Black%');
+Select name as artist from artist where name like ('%Black%');
+
