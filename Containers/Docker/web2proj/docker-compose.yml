@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+    php-apache:
+        container_name: php-apache
+        build: php
+        links:
+            - "db:database"
+        depends_on:
+            - db
+        ports:
+            - 8000:80
+    db:
+        image: mariadb:10.4
+        container_name: db
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: pass111
+            MYSQL_DATABASE: testdb
+            MYSQL_USER: testuser
+            MYSQL_PASSWORD: testpass
+        ports:
+            - "9906:3306"
