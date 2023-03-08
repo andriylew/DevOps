@@ -6,9 +6,5 @@ RUN docker-php-ext-install gd
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 COPY web/ /var/www/html/
-RUN useradd -ms /bin/bash admin
-RUN chown -R admin:admin includes
-USER admin
-RUN chmod 755 includes
-
+RUN chown -R www-data:www-data /var/www/html
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
