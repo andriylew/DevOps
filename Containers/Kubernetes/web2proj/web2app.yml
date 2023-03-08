@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: php-web
+  labels:
+    app.kubernetes.io/name: web
+
+spec:
+  containers:
+  - name: php-web-cont
+    image: andriylew/web2proj:v1
+    ports:
+    - containerPort: 80
+      name: http-web-svc

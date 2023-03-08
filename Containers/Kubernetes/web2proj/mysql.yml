@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-db
+  labels:
+    app.kubernetes.io/name: db
+
+spec:
+  containers:
+  - name: db
+    image:  mariadb:10.4
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "pass111"
+    - name: MYSQL_DATABASE
+      value: "testdb"
+    - name: MYSQL_USER
+      value: "testuser"
+    - name: MYSQL_PASSWORD
+      value: "testpass"
+    ports:
+    - containerPort: 3306
+      name: db-svc-port
