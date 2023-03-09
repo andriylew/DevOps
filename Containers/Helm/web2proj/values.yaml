@@ -19,6 +19,7 @@ Web:
       Port: 8000
   
 DB:
+  Pod:
     Name: mysql-db
   Container:
     Name: db-cont
