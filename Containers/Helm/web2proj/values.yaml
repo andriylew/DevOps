@@ -18,7 +18,7 @@ Web:
       Name: php-service-port
       Port: 8000
   
-  DB:
+DB:
     Name: mysql-db
   Container:
     Name: db-cont
