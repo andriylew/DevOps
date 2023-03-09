@@ -6,7 +6,7 @@ spec:
   selector:
     app.kubernetes.io/name: db
   ports:
-  - name: {{ .Values.Web.Service.Ports.Name }}
+  - name: {{ .Values.DB.Service.Ports.Name }}
     protocol: TCP
-    port: {{ .Values.Web.Service.Ports.Port }}
+    port: {{ .Values.DB.Service.Ports.Port }}
     targetPort: db-port
