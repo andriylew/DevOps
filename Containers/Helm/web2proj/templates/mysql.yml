@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.DB.Pod.Name }}
+  labels:
+    app.kubernetes.io/name: db
+
+spec:
+  containers:
+  - name: {{ .Values.DB.Container.Name }}
+    image: "{{ .Values.DB.image.name }}:{{ .Values.DB.image.tag }}"
+    imagePullPolicy: {{ .Values.DB.image.pullPolicy }}
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: {{ .Values.DB.env.MYSQL_ROOT_PASSWORD }}
+    - name: MYSQL_DATABASE
+      value: {{ .Values.DB.env.MYSQL_DATABASE }}
+    - name: MYSQL_USER
+      value: {{ .Values.DB.env.MYSQL_USER }}
+    - name: MYSQL_PASSWORD
+      value: {{ .Values.DB.env.MYSQL_PASSWORD }}
+    ports:
+    - containerPort: 3306
+      name: db-port

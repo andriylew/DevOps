@@ -1,0 +1,38 @@
+# Default values for web2proj.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+Web:
+  Pod:
+    Name: php-web
+  Container:
+    Name: php-web-cont
+  image: 
+    repository: andriylew
+    name: web2proj
+    tag: v1     # Overrides the image tag whose default is the chart appVersion.
+    pullPolicy: IfNotPresent
+  Service:
+    Name: php-service
+    Ports:
+      Name: php-service-port
+      Port: 8000
+  
+  DB:
+    Name: mysql-db
+  Container:
+    Name: db-cont
+  image: 
+    name: mariadb
+    tag: 10.4
+    pullPolicy: IfNotPresent
+  env:
+    MYSQL_ROOT_PASSWORD: "pass111"
+    MYSQL_DATABASE: "testdb" 
+    MYSQL_USER: "testuser"
+    MYSQL_PASSWORD: "testpass"
+  Service:
+    Name: db-service
+    Ports:
+      Name: db-service-port
+      Port: 9906
