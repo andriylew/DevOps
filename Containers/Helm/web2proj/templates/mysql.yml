@@ -1,3 +1,4 @@
+{{- if .Values.DB.enabled }}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -22,3 +23,4 @@ spec:
     ports:
     - containerPort: 3306
       name: db-port
+{{- end }}

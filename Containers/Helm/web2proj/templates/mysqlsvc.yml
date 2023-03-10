@@ -1,3 +1,4 @@
+{{- if .Values.DB.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -10,3 +11,4 @@ spec:
     protocol: TCP
     port: {{ .Values.DB.Service.Ports.Port }}
     targetPort: db-port
+{{- end }}

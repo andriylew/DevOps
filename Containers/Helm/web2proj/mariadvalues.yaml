@@ -1,0 +1,15 @@
+image:
+  tag: 10.4
+
+auth:
+  rootPassword: "pass111"
+  database: "testdb"
+  username: "testuser"
+  password:  "testpass"     
+
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+    labels:
+      release: prometheus
